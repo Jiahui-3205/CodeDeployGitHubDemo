@@ -60,31 +60,31 @@ if __name__=='__main__':
                         workers=Config['num_workers']
                         )
 
-loss=result.history['loss']
-val_loss=result.history['val_loss']
-import numpy as np
-import matplotlib.pyplot as plt
+    loss=result.history['loss']
+    val_loss=result.history['val_loss']
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-#print(np.shape(loss))
-epochs=np.arange(len(loss))
-plt.figure()
-plt.plot(epochs,loss,label='loss')
-plt.plot(epochs,val_loss,label='val_loss')
-plt.xlabel('epochs')
-plt.ylabel('loss')
-plt.legend()
-plt.savefig('loss.png',dpi=256)
+    #print(np.shape(loss))
+    epochs=np.arange(len(loss))
+    plt.figure()
+    plt.plot(epochs,loss,label='loss')
+    plt.plot(epochs,val_loss,label='val_loss')
+    plt.xlabel('epochs')
+    plt.ylabel('loss')
+    plt.legend()
+    plt.savefig('loss.png',dpi=256)
 
-acc=result.history['accuracy']
-val_acc=result.history['val_accuracy']
-#print(acc)
-#print(val_acc)
+    acc=result.history['accuracy']
+    val_acc=result.history['val_accuracy']
+    #print(acc)
+    #print(val_acc)
 
-plt.figure()
-plt.plot(epochs,acc,label='acc')
-plt.plot(epochs,val_acc,label='val_acc')
-plt.xlabel('epochs')
-plt.legend()
-plt.ylabel('percentage')
-plt.savefig('accuracy.jpg',dpi=256)
-                                                   
+    plt.figure()
+    plt.plot(epochs,acc,label='acc')
+    plt.plot(epochs,val_acc,label='val_acc')
+    plt.xlabel('epochs')
+    plt.legend()
+    plt.ylabel('percentage')
+    plt.savefig('accuracy.jpg',dpi=256)
+                                                    
