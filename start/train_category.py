@@ -63,7 +63,9 @@ if __name__=='__main__':
 loss=result.history['loss']
 val_loss=result.history['val_loss']
 import numpy as np
-print(np.shape(loss))
+import matplotlib.pyplot as plt
+
+#print(np.shape(loss))
 epochs=np.arange(len(loss))
 plt.figure()
 plt.plot(epochs,loss,label='loss')
@@ -75,8 +77,8 @@ plt.savefig('loss.png',dpi=256)
 
 acc=result.history['accuracy']
 val_acc=result.history['val_accuracy']
-print(acc)
-print(val_acc)
+#print(acc)
+#print(val_acc)
 
 plt.figure()
 plt.plot(epochs,acc,label='acc')
@@ -85,3 +87,4 @@ plt.xlabel('epochs')
 plt.legend()
 plt.ylabel('percentage')
 plt.savefig('accuracy.jpg',dpi=256)
+                                                   
