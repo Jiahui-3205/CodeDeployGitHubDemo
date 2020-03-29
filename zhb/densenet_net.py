@@ -57,7 +57,7 @@ if __name__=='__main__':
 
         node_number=32
         # dense block 1
-        for i in range (4):
+        for i in range (2):
             z=keras.layers.BatchNormalization(axis=1,epsilon=0.001)(z)
             z=keras.layers.Activation('relu')(z)
             z=keras.layers.Conv2D(node_number*4,1, strides=1, padding='same',use_bias=False)(z)
@@ -133,6 +133,8 @@ if __name__=='__main__':
                         use_multiprocessing=True,epochs=Config['num_epochs'],
                         workers=Config['num_workers']
                         )
+    model.save('dense_net_reduced.hdf5')
+
 
 
 
@@ -151,8 +153,7 @@ if __name__=='__main__':
 
     acc=result.history['accuracy']
     val_acc=result.history['val_accuracy']
-    print(acc)
-    print(val_acc)
+
 
     plt.figure()
     plt.plot(epochs,acc,label='acc')

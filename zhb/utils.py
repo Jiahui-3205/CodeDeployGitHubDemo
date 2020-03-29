@@ -14,7 +14,7 @@ Config['use_cuda'] = True
 Config['debug'] = False
 # Config['debug'] = True
 Config['num_epochs'] = 20
-Config['batch_size'] = 32
+Config['batch_size'] = 16
 
-Config['learning_rate'] = 0.001
-Config['num_workers'] = 5
+Config['learning_rate'] = 0.015
+Config['num_workers'] = 1
