@@ -57,7 +57,7 @@ if __name__=='__main__':
 
         node_number=32
         # dense block 1
-        for i in range (6):
+        for i in range (4):
             z=keras.layers.BatchNormalization(axis=1,epsilon=0.001)(z)
             z=keras.layers.Activation('relu')(z)
             z=keras.layers.Conv2D(node_number*4,1, strides=1, padding='same',use_bias=False)(z)
@@ -74,7 +74,7 @@ if __name__=='__main__':
         node_number=int(node_number*0.8)
 
             # dense block 2
-        for i in range (6):
+        for i in range (4):
             z=keras.layers.BatchNormalization(axis=1,epsilon=0.001)(z)
             z=keras.layers.Activation('relu')(z)
             z=keras.layers.Conv2D(node_number*4,1, strides=1, padding='same',use_bias=True)(z)
@@ -91,7 +91,7 @@ if __name__=='__main__':
         z=keras.layers.AveragePooling2D(2,padding='same',strides=2)(z)
         node_number=int(node_number*0.8)
 
-        for i in range (12):
+        for i in range (8):
             z=keras.layers.BatchNormalization(axis=1,epsilon=0.001)(z)
             z=keras.layers.Activation('relu')(z)
             z=keras.layers.Conv2D(node_number*4,1, strides=1, padding='same',use_bias=True)(z)
@@ -107,7 +107,7 @@ if __name__=='__main__':
         z=keras.layers.AveragePooling2D(2,padding='same',strides=2)(z)
         node_number=int(node_number*0.8)
 
-        for i in range (8):
+        for i in range (6):
             z=keras.layers.BatchNormalization(axis=1,epsilon=0.001)(z)
             z=keras.layers.Activation('relu')(z)
             z=keras.layers.Conv2D(node_number*4,1, strides=1, padding='same',use_bias=True)(z)
